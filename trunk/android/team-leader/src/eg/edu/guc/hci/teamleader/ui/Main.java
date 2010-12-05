@@ -1,6 +1,6 @@
-package eg.edu.guc.hci.ui;
+package eg.edu.guc.hci.teamleader.ui;
 
-import android.app.Activity;
+import eg.edu.guc.hci.teamleader.ui.R;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
