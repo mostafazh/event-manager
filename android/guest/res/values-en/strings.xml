@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Guest!</string>
+	<string name="app_name">Event Manager</string>
+	<string name="feedbacktitle">Enter your feedback and comments here:</string>
+	<string name="feedbacktype">Feedback Type</string>
+	<string name="feedbacktype1">Suggestion</string>
+	<string name="feedbacktype2">Praise</string>
+	<string name="feedbacktype3">Complain</string>
+	<string name="feedbacktype4">Other</string>
+</resources>
