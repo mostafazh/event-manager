@@ -1,6 +1,6 @@
-package eg.edu.guc.hci.ui;
+package eg.edu.guc.hci.usher.ui;
 
-import android.app.Activity;
+import eg.edu.guc.hci.usher.ui.R;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
