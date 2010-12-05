@@ -1,5 +1,6 @@
 package eg.edu.guc.hci.guest.ui;
 
+import eg.edu.guc.hci.guest.model.Votes;
 import eg.edu.guc.hci.guest.ui.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,26 +18,30 @@ public class Guest extends Activity {
 
 	public void searchButtonClick(View v) {
 		Log.i("Event Manager", "Search");
-		startActivity(new Intent(this,SearchActivity.class));
+		startActivity(new Intent(this, SearchActivity.class));
 	}
 
 	public void mapsButtonClick(View v) {
 		Log.i("Event Manager", "Maps");
-		startActivity(new Intent(this,MapsActivity.class));
+		startActivity(new Intent(this, MapsActivity.class));
 	}
 
 	public void votesButtonClick(View v) {
 		Log.i("Event Manager", "Votes");
-		startActivity(new Intent(this,VotesActivity.class));
+		if (new Votes().getVotes().size() == 1)
+			startActivity(new Intent(this, VoteActivity.class).putExtra("id",
+					new Votes().getVotes().get(0).getId()));
+		else
+			startActivity(new Intent(this, VotesActivity.class));
 	}
 
 	public void layarButtonClick(View v) {
 		Log.i("Event Manager", "Layar");
-//		startActivity(new Intent("eg.edu.guc.hci.ui.LAYAR_ACTIVITY"));
+		// startActivity(new Intent("eg.edu.guc.hci.ui.LAYAR_ACTIVITY"));
 	}
 
 	public void feedbackButtonClick(View v) {
 		Log.i("Event Manager", "Feedback");
-		startActivity(new Intent(this,FeedbackActivity.class));
+		startActivity(new Intent(this, FeedbackActivity.class));
 	}
 }

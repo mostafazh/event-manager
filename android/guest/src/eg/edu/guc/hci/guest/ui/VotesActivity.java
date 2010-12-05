@@ -1,39 +1,27 @@
 package eg.edu.guc.hci.guest.ui;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
-import com.commonsware.cwac.merge.MergeAdapter;
-
-import eg.edu.guc.hci.guest.ui.R;
-
 import android.app.ListActivity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class VotesActivity extends ListActivity {
+import com.commonsware.cwac.merge.MergeAdapter;
 
-	private static final String[] openVotes = { "Favourite song",
-			"Favourite place", "Best Performer" };
-	private static final String[] closedVotes = { "Vote 1" };
+import eg.edu.guc.hci.guest.model.Votes;
+
+public class VotesActivity extends ListActivity {
 	private MergeAdapter adapter = null;
 	private ArrayAdapter<String> arrayAdapter = null;
-
-	private AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {
-		public void onItemClick(AdapterView parent, View v, int position,
-				long id) {
-			onListItemClick((ListView) parent, v, position, id);
-		}
-	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +40,7 @@ public class VotesActivity extends ListActivity {
 
 	private ArrayAdapter<String> buildFirstList() {
 		return (new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, new ArrayList<String>(
-						Arrays.asList(openVotes))));
+				android.R.layout.simple_list_item_1, new Votes().getOpenVotesTitles()));
 	}
 
 	private View buildLabel(String labelText) {
@@ -64,13 +51,11 @@ public class VotesActivity extends ListActivity {
 		result.setTypeface(Typeface.create("", Typeface.BOLD));
 		result.setText(" " + labelText);
 		result.setHeight(40);
-
 		return (result);
 	}
 
 	private ListAdapter buildSecondList() {
-		ArrayList<String> list = new ArrayList<String>(
-				Arrays.asList(closedVotes));
+		ArrayList<String> list = new Votes().getClosedVotesTitles();
 
 		Collections.shuffle(list);
 
@@ -79,6 +64,14 @@ public class VotesActivity extends ListActivity {
 	}
 
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		Log.i("Event Manager", "Click");
+		startActivity(new Intent(this, VoteActivity.class).putExtra("id",
+				getIdfromPosition(position)));
+
+		Log.i("Event Manager", "Click, position=[" + position + "] id=["
+				+ getIdfromPosition(position) + "]");
+	}
+
+	private int getIdfromPosition(int position) {
+		return position - (position <= new Votes().getOpenVotes().size()? 1 : 2);
 	}
 }

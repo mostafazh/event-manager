@@ -6,19 +6,26 @@
 		android:layout_width="fill_parent" android:layout_height="0dip"
 		android:layout_weight=".33">
 		<Button android:id="@+id/searchButton" android:text="Search"
-			android:layout_weight=".5" android:layout_width="0dip"
+			android:background="@drawable/search" android:layout_weight=".5"
+			android:layout_width="0dip" android:layout_margin="20dp"
 			android:layout_height="fill_parent" android:onClick="searchButtonClick" />
 		<Button android:id="@+id/mapsButton" android:text="Maps"
-			android:layout_weight=".5" android:layout_width="0dip"
+			android:background="@drawable/maps" android:layout_weight=".5"
+			android:layout_width="0dip" android:layout_margin="20dp"
 			android:layout_height="fill_parent" android:onClick="mapsButtonClick" />
 	</LinearLayout>
 	<LinearLayout android:orientation="horizontal"
 		android:layout_width="fill_parent" android:layout_height="0dip"
 		android:layout_weight=".33">
 		<Button android:id="@+id/feedbackButton" android:text="Feedback"
-			android:layout_weight=".5" android:layout_width="0dip"
+			android:background="@drawable/feedback1" android:layout_weight=".5"
+			android:layout_width="0dip" android:layout_margin="20dp"
 			android:layout_height="fill_parent" android:onClick="feedbackButtonClick" />
+		<!-- <Button android:id="@+id/votesButton" android:text="Votes" android:layout_weight=".5" 
+			android:layout_width="0dip" android:layout_height="fill_parent" android:onClick="votesButtonClick" 
+			/> -->
 		<Button android:id="@+id/votesButton" android:text="Votes"
+			android:background="@drawable/votes0" android:layout_margin="20dp"
 			android:layout_weight=".5" android:layout_width="0dip"
 			android:layout_height="fill_parent" android:onClick="votesButtonClick" />
 	</LinearLayout>
@@ -28,9 +35,10 @@
 		<Button android:text="Search" android:layout_weight=".5"
 			android:layout_width="0dip" android:layout_height="fill_parent"
 			android:enabled="false" android:visibility="invisible"
-			android:onClick="mapsButtonClick" />
+			android:layout_margin="20dp" android:onClick="mapsButtonClick" />
 		<Button android:id="@+id/layarButton" android:text="Layar"
-			android:layout_weight=".5" android:layout_width="0dip"
-			android:layout_height="fill_parent" android:onClick="layarButtonClick" />
+			android:layout_margin="20dp" android:layout_weight=".5" android:background="@drawable/layar" 
+			android:layout_width="0dip" android:layout_height="fill_parent"
+			android:onClick="layarButtonClick" />
 	</LinearLayout>
 </LinearLayout>
