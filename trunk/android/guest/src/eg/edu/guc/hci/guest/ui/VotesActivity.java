@@ -1,4 +1,4 @@
-package eg.edu.guc.hci.ui;
+package eg.edu.guc.hci.guest.ui;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,9 +6,9 @@ import java.util.Collections;
 
 import com.commonsware.cwac.merge.MergeAdapter;
 
-import android.app.Activity;
+import eg.edu.guc.hci.guest.ui.R;
+
 import android.app.ListActivity;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,9 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;

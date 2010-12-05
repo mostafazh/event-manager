@@ -1,6 +1,6 @@
-package eg.edu.guc.hci.ui;
+package eg.edu.guc.hci.guest.ui;
 
-import eg.edu.guc.hci.ui.R;
+import eg.edu.guc.hci.guest.ui.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;

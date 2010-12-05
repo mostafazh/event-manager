@@ -1,13 +1,15 @@
-package eg.edu.guc.hci.ui;
+package eg.edu.guc.hci.guest.ui;
 
-import eg.edu.guc.hci.ui.R;
+import eg.edu.guc.hci.guest.ui.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class SearchActivity extends Activity {
+public class VoteActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.search);
+		setContentView(R.layout.vote);
+		
 	}
+
 }
