@@ -19,14 +19,22 @@
 		android:layout_width="fill_parent" android:layout_height="0dip"
 		android:layout_weight=".5">
 		<Button android:id="@+id/votesButton" android:text="Votes"
-			android:layout_weight=".5" android:layout_width="0dip"
+			android:background="@drawable/bar_chart" android:drawablePadding="0px"
+			android:layout_weight=".33" android:layout_width="0dip"
 			android:layout_height="fill_parent" android:onClick="votesButtonClick" />
-		<Button android:text="Search" android:layout_weight=".5"
+		<!-- <LinearLayout android:layout_weight=".33" android:layout_width="0dip" 
+			android:layout_height="fill_parent" android:onClick="votesButtonClick"> <ImageButton 
+			android:background="@android:color/transparent" android:src="@drawable/chart_bar" 
+			android:scaleType="fitCenter" android:id="@+id/votesButton" android:drawableTop="@drawable/bar_chart" 
+			android:layout_width="fill_parent" android:layout_weight=".66" android:layout_height="0dip" 
+			/> <TextView android:layout_width="fill_parent" android:layout_weight=".34" 
+			android:layout_height="0dip" android:text="Votes" /> </LinearLayout> -->
+		<Button android:text="Search" android:layout_weight=".33"
 			android:layout_width="0dip" android:layout_height="fill_parent"
-			android:enabled="false" android:visibility="invisible"
-			android:onClick="mapsButtonClick" />
+			android:drawableTop="@drawable/bar_chart" android:enabled="false"
+			android:visibility="invisible" android:onClick="mapsButtonClick" />
 		<Button android:id="@+id/layarButton" android:text="Layar"
-			android:layout_weight=".5" android:layout_width="0dip"
+			android:layout_weight=".33" android:layout_width="0dip"
 			android:layout_height="fill_parent" android:onClick="layarButtonClick" />
 	</LinearLayout>
 </LinearLayout>
