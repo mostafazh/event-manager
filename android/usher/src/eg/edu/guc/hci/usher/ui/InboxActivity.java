@@ -3,11 +3,17 @@ package eg.edu.guc.hci.usher.ui;
 
 
 
+import java.io.IOException;
+
 import android.app.ListActivity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -35,7 +41,7 @@ public class InboxActivity extends ListActivity {
     	  super.onCreate(savedInstanceState);
 
     	  setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, msgs));
-
+    	  
     	  ListView lv = getListView();
     	  lv.setTextFilterEnabled(true);
     	}
@@ -55,15 +61,15 @@ public class InboxActivity extends ListActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-      switch (item.getItemId()) {
+    	switch (item.getItemId()) {
+      
       case R.id.menu_messages_ctm:
     	  startActivity(new Intent(this, CreateTextMessage.class));
-     break;
-      case R.id.menu_messages_cvm:
+      break;
       
-    	  break;
+      case R.id.menu_messages_cvm:
+      break;
       }
       return true;
     }
-    
 }

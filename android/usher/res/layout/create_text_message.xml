@@ -5,13 +5,22 @@
 
 
 	<AutoCompleteTextView android:id="@+id/EditText01"
-		android:completionThreshold = "1"
-		android:hint="To" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:layout_marginLeft="5dp" />
-	<EditText android:hint="Subject" android:id="@+id/EditText02"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
-	<EditText android:id="@+id/EditText03" android:layout_width="fill_parent"
-		android:layout_height="wrap_content"></EditText>
+		android:completionThreshold="1" android:hint="To"
+		android:layout_weight="0.20" android:layout_width="fill_parent"
+		android:layout_height="0dip" />
 
-<Button android:text="Send" android:id="@+id/Button01" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+	<EditText android:hint="Subject" android:id="@+id/EditText02"
+		android:layout_weight="0.20"
+		android:layout_width="fill_parent" android:layout_height="0dip">
+	</EditText>
+
+	<EditText android:id="@+id/EditText03" android:layout_weight="0.40"
+		android:layout_width="fill_parent" android:layout_height="0dip">
+	</EditText>
+
+	<Button android:text="Send" android:id="@+id/Button01"
+		android:layout_weight="0.20"
+		android:onClick="SendMessage" android:layout_width="fill_parent"
+		android:layout_height="0dip"></Button>
+
 </LinearLayout>
