@@ -1,6 +1,7 @@
 package eg.edu.guc.hci.usher.ui;
 
 import eg.edu.guc.hci.usher.ui.R;
+import eg.edu.guc.hci.usher.ui.team.TeamsActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -28,7 +29,7 @@ public class Main extends TabActivity {
 		tabHost.addTab(spec);
 
 		// Do the same for the other tabs
-		intent = new Intent(this, TasksActivity.class);
+		intent = new Intent(this, TeamsActivity.class);
 		spec = tabHost.newTabSpec("Teams").setIndicator("Teams")
 				.setContent(intent);
 		tabHost.addTab(spec);
