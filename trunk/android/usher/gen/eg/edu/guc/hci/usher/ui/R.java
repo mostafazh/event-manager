@@ -22,12 +22,19 @@ public final class R {
         public static final int TextView01=0x7f060007;
         public static final int TextView02=0x7f060008;
         public static final int TextView03=0x7f060009;
+        public static final int TextViwe_Task1=0x7f06000a;
+        public static final int TextViwe_Task1_Desc=0x7f06000c;
+        public static final int TextViwe_Task1_assigenedBy=0x7f06000e;
+        public static final int TextViwe_Task1_comment=0x7f06000f;
+        public static final int TextViwe_Task1_deadLine=0x7f06000d;
+        public static final int TextViwe_Task1_priorty=0x7f06000b;
+        public static final int TextViwe_Task1_submit=0x7f060010;
         public static final int menu_messages_ctm=0x7f060005;
         public static final int menu_messages_cvm=0x7f060006;
-        public static final int tasks_view_list=0x7f06000a;
-        public static final int teamMemberItemIcon=0x7f06000b;
-        public static final int teamMemberItemName=0x7f06000c;
-        public static final int teamMemberItemType=0x7f06000d;
+        public static final int tasks_view_list=0x7f060011;
+        public static final int teamMemberItemIcon=0x7f060012;
+        public static final int teamMemberItemName=0x7f060013;
+        public static final int teamMemberItemType=0x7f060014;
     }
     public static final class layout {
         public static final int create_text_message=0x7f030000;
@@ -39,8 +46,9 @@ public final class R {
         public static final int message_listen=0x7f030006;
         public static final int message_view=0x7f030007;
         public static final int name_list_item=0x7f030008;
-        public static final int tasks_view_list=0x7f030009;
-        public static final int team_member_item=0x7f03000a;
+        public static final int task1_view_usher=0x7f030009;
+        public static final int tasks_view_list=0x7f03000a;
+        public static final int team_member_item=0x7f03000b;
     }
     public static final class raw {
         public static final int seeyoulater=0x7f040000;
