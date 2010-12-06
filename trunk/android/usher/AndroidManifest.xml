@@ -18,6 +18,7 @@
 		<activity android:name=".MessageActivity" android:label="@string/app_name" />
 		<activity android:name=".VoiceMessageActivity" android:label="@string/app_name" />
 		<activity android:name=".CreateTextMessage" android:label="@string/app_name" />
+		<activity android:name=".task1Activity" android:label="@string/app_name" />
 	</application>
 	<uses-sdk android:minSdkVersion="7" />
 </manifest> 
