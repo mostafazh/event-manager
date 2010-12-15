@@ -63,6 +63,7 @@ public class VotesActivity extends ListActivity {
 				android.R.layout.simple_list_item_1, list));
 	}
 
+	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		startActivity(new Intent(this, VoteActivity.class).putExtra("id",
 				getIdfromPosition(position)));

@@ -8,4 +8,10 @@
 	<string name="feedbacktype2">Praise</string>
 	<string name="feedbacktype3">Complain</string>
 	<string name="feedbacktype4">Other</string>
+
+	<string name="favouriteSong">Favourite Song</string>
+	<string name="song0">Song I</string>
+	<string name="song1">Song II</string>
+	<string name="song2">Song III</string>
+	<string name="song3">Song IV</string>
 </resources>

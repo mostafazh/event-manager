@@ -2,12 +2,9 @@ package eg.edu.guc.hci.guest.ui;
 
 import eg.edu.guc.hci.guest.ui.R;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputFilter.LengthFilter;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class FeedbackActivity extends Activity {
