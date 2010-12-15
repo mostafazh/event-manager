@@ -1,8 +1,11 @@
 package eg.edu.guc.hci.guest.model;
 
+import java.util.ArrayList;
+
 public class Vote {
 	private long id;
 	private String title;
+	private ArrayList<Quesion> questions;
 
 	public Vote(int id, String title) {
 		this.id = id;
