@@ -60,11 +60,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `eventManager`.`Team`
+-- Table `eventManager`.`team`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `eventManager`.`Team` ;
+DROP TABLE IF EXISTS `eventManager`.`team` ;
 
-CREATE  TABLE IF NOT EXISTS `eventManager`.`Team` (
+CREATE  TABLE IF NOT EXISTS `eventManager`.`team` (
   `team_id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`team_id`) )
@@ -90,7 +90,7 @@ CREATE  TABLE IF NOT EXISTS `eventManager`.`user_team` (
     ON UPDATE NO ACTION,
   CONSTRAINT `team_ref`
     FOREIGN KEY (`team_id` )
-    REFERENCES `eventManager`.`Team` (`team_id` )
+    REFERENCES `eventManager`.`team` (`team_id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
