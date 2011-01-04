@@ -8,6 +8,8 @@ import org.simpleframework.xml.core.Persister;
 
 public class UserFactory extends User implements ModelFactory<User> {
 
+	
+	//Almost the same for all the classes.
 	public ArrayList<String> getColumnNames() {
 		ArrayList<String> result = new ArrayList<String>();
 		result.add(username_column);
@@ -17,6 +19,13 @@ public class UserFactory extends User implements ModelFactory<User> {
 		return result;
 	}
 
+	/**
+	 * Given a <code>ResultSet</code> the method will convert the top record of
+	 * the <code>ResultSet</code> to a User Object.
+	 * 
+	 * @param rs
+	 *            a <code>ResultSet</code> with at least one record.
+	 */
 	public User newModel(ResultSet rs) {
 		User u = null;
 		try {
@@ -29,6 +38,8 @@ public class UserFactory extends User implements ModelFactory<User> {
 		return u;
 	}
 
+	// The Same for almost all the classes [Just change User to the other Class
+	// name]
 	public User newModel(String s) {
 		try {
 			return new Persister().read(User.class, s);

@@ -19,6 +19,13 @@ public class ConnectionManager<L extends Model> {
 	private ModelFactory<L> factory;
 	private boolean autoConnect;
 
+	/**
+	 * 
+	 * @param factory
+	 *            A factory that creates Objects of type L
+	 * @param autoConnect
+	 *            true to open and close the DB connection automatically.
+	 */
 	public ConnectionManager(ModelFactory<L> factory, boolean autoConnect) {
 		this.factory = factory;
 		this.autoConnect = autoConnect;
@@ -44,9 +51,9 @@ public class ConnectionManager<L extends Model> {
 
 	private ResultSet _executeDML(String sql) {
 		ResultSet rs = null;
-		
-		System.out.println("\nDML:\n"+sql);
-		
+
+		System.out.println("\nDML:\n" + sql);
+
 		try {
 			if (s != null)
 				rs = s.executeQuery(sql);
@@ -56,10 +63,19 @@ public class ConnectionManager<L extends Model> {
 		return rs;
 	}
 
+	/**
+	 * DML => SELECT
+	 * 
+	 * Used to get a list of objects as an output of a single SQL query.
+	 * 
+	 * @param sql
+	 *            the SQL query.
+	 * @return a list of the matched records.
+	 */
 	public ArrayList<L> executeDML(String sql) {
 		if (autoConnect)
 			openConnection();
-		
+
 		ResultSet rs = _executeDML(sql);
 		ArrayList<L> result = new ArrayList<L>();
 		try {
@@ -77,9 +93,9 @@ public class ConnectionManager<L extends Model> {
 
 	private int _executeDDL(String sql) {
 		int r = 0;
-		
-		System.out.println("\nDDL:\n"+sql);
-		
+
+		System.out.println("\nDDL:\n" + sql);
+
 		try {
 			if (s != null)
 				r = s.executeUpdate(sql);
@@ -89,6 +105,13 @@ public class ConnectionManager<L extends Model> {
 		return r;
 	}
 
+	/**
+	 * DML => INSERT, DELETE and UPADTE.
+	 * 
+	 * @param sql
+	 *            the SQL query
+	 * @return number of affected rows.
+	 */
 	public int executeDDL(String sql) {
 		if (autoConnect)
 			openConnection();

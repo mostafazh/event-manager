@@ -5,6 +5,7 @@ import org.simpleframework.xml.Root;
 
 @Root
 public class User extends Model {
+	// Actual names of the columns in the DB.
 	public static final String username_column = "username";
 	public static final String password_column = "password";
 	public static final String name_column = "name";
@@ -29,6 +30,9 @@ public class User extends Model {
 		this.name = name;
 		this.type_id = type_id;
 	}
+
+	// All the getters and setters can be automatically generated (right click
+	// in any place in the Class -> Source -> Generate Getters and Setters.).
 
 	public String getUsername() {
 		return username;
