@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+	<LinearLayout
+	  
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:orientation="horizontal"
+	  android:layout_height="wrap_content" android:layout_width="fill_parent">
+	  
+	  <TextView
+	  		android:layout_weight="0.3" 
+			android:lines="2"
+			android:textSize="30dp"
+			android:gravity="center_horizontal"
+			android:layout_width="0dip"
+			android:layout_height="wrap_content" android:text="Task : "/> 
+	  <TextView android:text="kill guest" android:id="@+id/task_view_title"
+	  		android:layout_weight="0.7" 
+			android:lines="2"
+			android:textSize="30dp"
+			android:gravity="left"
+			android:layout_width="0dip" 
+			android:layout_height="wrap_content"/> 
+	</LinearLayout>
+
+	<LinearLayout
+	  
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:orientation="horizontal"
+	  android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+
+		<TextView android:text="PRIORTY : "
+				android:layout_weight="0.3" 
+				android:lines="2"
+				android:layout_width="0dip" android:layout_height="wrap_content"/> 
+		<TextView android:text="Low" android:lines="2" android:layout_weight="0.7" 
+				android:layout_width="0dip" android:layout_height="wrap_content" android:id="@+id/task_view_priorty"/> 
+	
+	</LinearLayout>
+
+
+	<LinearLayout
+	  
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:orientation="horizontal"
+	  android:layout_height="wrap_content" android:layout_width="fill_parent">
+  
+	  <TextView android:text="DESCRIPTION : "
+			android:lines="3" android:layout_weight="0.3" 
+			android:layout_width="0dip" android:layout_height="wrap_content"/> 
+	
+	  <TextView android:text="this the desciption of the 1st task and you will find it in 2 lines" android:lines="3"
+		android:layout_weight="0.7" 	android:layout_width="0dip" android:layout_height="wrap_content" android:id="@+id/task_view_description"/> 
+	
+	</LinearLayout>  
+  
+  
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="fill_parent">
+<TextView android:layout_weight="0.3" android:layout_height="wrap_content" android:lines="2" android:layout_width="0dip" android:text="DEADLINE : "></TextView>
+<TextView android:layout_weight="0.7" android:layout_height="wrap_content" android:lines="2" android:layout_width="0dip" android:text="11:15 Today" android:id="@+id/task_view_deadLine"></TextView>
+
+</LinearLayout>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/LinearLayout02">
+<TextView android:layout_weight="0.3" android:layout_height="wrap_content" android:lines="2" android:layout_width="0dip" android:text="ASSIGNED BY : "></TextView>
+<TextView android:layout_weight="0.7" android:layout_height="wrap_content" android:lines="2" android:layout_width="0dip" android:id="@+id/task_view_assignedBy" android:text="Hozomobol"></TextView>
+
+</LinearLayout>
+
+<TextView android:text="COMMENT:" android:lines="2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+ 
+ <Button android:text="
+  @leader:what the hell r u doing? \n
+  @me:i'm doing the bazoka from morsy \n
+  @leader com..........."
+  android:id="@+id/TextViwe_Task1_submit"
+		android:layout_height="fill_parent"
+		android:gravity="left"
+		android:layout_width="fill_parent"/> 
+  
+  
+<Button android:text="Submit Task" 
+		android:id="@+id/TextViwe_Task1_submit"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:onClick="submitTask"
+		/>
+   
+
+
+</LinearLayout>
