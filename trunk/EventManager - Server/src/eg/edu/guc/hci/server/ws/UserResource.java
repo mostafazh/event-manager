@@ -16,6 +16,13 @@ import eg.edu.guc.hci.server.model.User;
 import eg.edu.guc.hci.server.model.UserFactory;
 import eg.edu.guc.hci.server.model.util.ConnectionManager;
 
+/**
+ * This is the Web Service Class where all the "User" related WS should be
+ * found.
+ * 
+ * @author Mostafa
+ * 
+ */
 @Path("/user")
 public class UserResource {
 	@Context
