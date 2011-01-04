@@ -15,7 +15,10 @@ public class UserFactory extends User implements ModelFactory<User> {
 		result.add(username_column);
 		result.add(password_column);
 		result.add(name_column);
+		result.add(rating_column);
 		result.add(type_id_column);
+		result.add(evaluation_id_column);
+		result.add(image_column);
 		return result;
 	}
 
@@ -31,7 +34,7 @@ public class UserFactory extends User implements ModelFactory<User> {
 		try {
 			u = new User(rs.getString(username_column),
 					rs.getString(password_column), rs.getString(name_column),
-					rs.getInt(type_id_column));
+					rs.getInt(rating_column),rs.getInt(type_id_column),rs.getInt(evaluation_id_column),rs.getString(image_column),rs.getInt(team_id_column));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
