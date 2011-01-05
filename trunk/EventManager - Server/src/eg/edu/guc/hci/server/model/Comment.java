@@ -14,13 +14,16 @@ public class Comment extends Model {
 	public static final String time_column = "time";
 
 	@Attribute
-	private String username;	
+	private String username;
 	@Attribute
 	private int task_id;
 	@Attribute
 	private String comment;
 	@Attribute
 	private Date time;
+
+	public Comment() {
+	}
 
 	public Comment(String username, int task_id, String comment, Date time) {
 		super();
@@ -65,6 +68,4 @@ public class Comment extends Model {
 		this.time = time;
 	}
 
-
-	
 }
