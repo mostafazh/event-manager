@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:text="Task 1: kill guest" android:id="@+id/TextViwe_Task1"
+		android:lines="2" android:textSize="30dp" android:gravity="center_horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+	<TextView android:text="PRIORTY : Low" android:id="@+id/TextViwe_Task1_priorty"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+	<TextView
+		android:text="DESCRIPTION : this the desciption of the 1st task and you will find it in 2 lines"
+		android:id="@+id/TextViwe_Task1_Desc" android:lines="3"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+	<TextView android:text="DEADLINE : 11:15 Today" android:id="@+id/TextViwe_Task1_deadLine"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+	<TextView android:text="ASSIGNED BY : Hozomobol" android:id="@+id/TextViwe_Task1_assigenedBy"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+	<TextView android:text="COMMENT:" android:id="@+id/TextViwe_Task1_comment"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+	<Button android:text="View Comments" android:id="@+id/TextViwe_Task1_comment"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:onClick="comment" />
+
+
+	<Button android:text="Submit Task" android:id="@+id/TextViwe_Task1_submit"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:onClick="submitTask" />
+
+</LinearLayout>
