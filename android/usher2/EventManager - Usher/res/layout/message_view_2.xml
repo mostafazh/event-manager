@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="fill_parent">
+
+	<TextView android:text="From : Ahmed" android:id="@+id/TextView01"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content"></TextView>
+	<TextView android:text="Subject : Test" android:id="@+id/TextView02"
+		android:lines="2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content"></TextView>
+	<TextView android:text="We are waiting for you at C7-301"
+		android:id="@+id/TextView03" android:layout_width="fill_parent"
+		android:layout_height="fill_parent"></TextView>
+
+
+
+
+
+</LinearLayout>
