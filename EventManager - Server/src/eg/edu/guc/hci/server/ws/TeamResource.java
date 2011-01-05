@@ -40,10 +40,10 @@ public class TeamResource {
 	@Path("getTeamByMember")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getTeamByMember(@QueryParam("username") @DefaultValue("") String username) {
-		ArrayList<Team> r = cm.executeDML("select "+Team.team_id_column+", "+Team.name_column+
+		ArrayList<Team> r = cm.executeDML("select team."+Team.team_id_column+", team."+Team.name_column+
 										  " from user, team "+
-										  "where "+User.username_column+" = "+username+
-										  " and "+User.team_id_column+" = "+Team.team_id_column);
+										  "where user."+User.username_column+" = \'"+username+
+										  "\' and user."+User.team_id_column+" = team."+Team.team_id_column);
 		for (Team team : r) {
 			return team.toXML();
 		}
