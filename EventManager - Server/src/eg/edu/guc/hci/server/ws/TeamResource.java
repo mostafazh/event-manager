@@ -14,6 +14,7 @@ import javax.ws.rs.core.UriInfo;
 
 import eg.edu.guc.hci.server.model.Team;
 import eg.edu.guc.hci.server.model.TeamFactory;
+import eg.edu.guc.hci.server.model.User;
 import eg.edu.guc.hci.server.model.util.ConnectionManager;
 
 /**
@@ -38,14 +39,15 @@ public class TeamResource {
 	@GET
 	@Path("getTeamByMember")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String getAdmin() {
-		ArrayList<Team> r = cm.executeDML("Select team FROM member,team where ");
+	public String getTeamByMember(@QueryParam("username") @DefaultValue("") String username) {
+		ArrayList<Team> r = cm.executeDML("select "+Team.team_id_column+", "+Team.name_column+
+										  " from user, team "+
+										  "where "+User.username_column+" = "+username+
+										  " and "+User.team_id_column+" = "+Team.team_id_column);
 		for (Team team : r) {
-			if (team.getType_id() == 2) {
-				System.out.println(team.toXML());
-				return team.toXML();
-			}
+			return team.toXML();
 		}
 		return "not-found";
 	}
+
 }

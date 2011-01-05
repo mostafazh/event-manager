@@ -61,4 +61,19 @@ public class UserResource {
 				+ User.password_column + "=\'" + password + "\'");
 		return "" + (r.size() == 1);
 	}
+
+	@GET
+	@Path("getTeamMembersByTeamID")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getTeamMembersByTeamID(@QueryParam("team_id") @DefaultValue("") String team_id) {
+		ArrayList<User> r = cm.executeDML("select user.*"+
+										  " from user "+
+										  " where "+User.team_id_column+" = "+team_id);
+		
+		for (User user : r) {
+			return user.toXML();
+		}
+		return "not-found";
+	}
+
 }
