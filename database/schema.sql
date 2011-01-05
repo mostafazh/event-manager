@@ -32,34 +32,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `eventManager`.`user`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `eventManager`.`user` ;
-
-CREATE  TABLE IF NOT EXISTS `eventManager`.`user` (
-  `username` VARCHAR(25) NOT NULL ,
-  `password` VARCHAR(25) NOT NULL ,
-  `name` VARCHAR(45) NOT NULL ,
-  `rating` INT NULL ,
-  `type_id` INT NULL ,
-  `evaluation_id` INT NULL ,
-  PRIMARY KEY (`username`) ,
-  INDEX `user_type` (`type_id` ASC) ,
-  INDEX `user_evaluation` (`evaluation_id` ASC) ,
-  CONSTRAINT `user_type`
-    FOREIGN KEY (`type_id` )
-    REFERENCES `eventManager`.`type` (`type_id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `user_evaluation`
-    FOREIGN KEY (`evaluation_id` )
-    REFERENCES `eventManager`.`evaluation` (`evaluation_id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `eventManager`.`team`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `eventManager`.`team` ;
@@ -72,23 +44,34 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `eventManager`.`user_team`
+-- Table `eventManager`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `eventManager`.`user_team` ;
+DROP TABLE IF EXISTS `eventManager`.`user` ;
 
-CREATE  TABLE IF NOT EXISTS `eventManager`.`user_team` (
+CREATE  TABLE IF NOT EXISTS `eventManager`.`user` (
   `username` VARCHAR(25) NOT NULL ,
-  `type` VARCHAR(45) NOT NULL ,
-  `team_id` INT NOT NULL ,
-  PRIMARY KEY (`username`, `team_id`) ,
-  INDEX `user_ref` (`username` ASC) ,
-  INDEX `team_ref` (`team_id` ASC) ,
-  CONSTRAINT `user_ref`
-    FOREIGN KEY (`username` )
-    REFERENCES `eventManager`.`user` (`username` )
+  `password` VARCHAR(25) NOT NULL ,
+  `name` VARCHAR(45) NOT NULL ,
+  `rating` INT NULL ,
+  `type_id` INT NULL ,
+  `evaluation_id` INT NULL ,
+  `image` LONGTEXT NULL ,
+  `team_id` INT NULL ,
+  PRIMARY KEY (`username`) ,
+  INDEX `user_type` (`type_id` ASC) ,
+  INDEX `user_evaluation` (`evaluation_id` ASC) ,
+  INDEX `user_team` (`team_id` ASC) ,
+  CONSTRAINT `user_type`
+    FOREIGN KEY (`type_id` )
+    REFERENCES `eventManager`.`type` (`type_id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `team_ref`
+  CONSTRAINT `user_evaluation`
+    FOREIGN KEY (`evaluation_id` )
+    REFERENCES `eventManager`.`evaluation` (`evaluation_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `user_team`
     FOREIGN KEY (`team_id` )
     REFERENCES `eventManager`.`team` (`team_id` )
     ON DELETE NO ACTION
@@ -193,7 +176,7 @@ CREATE  TABLE IF NOT EXISTS `eventManager`.`comment` (
   `task_id` INT NOT NULL ,
   `comment` TEXT NULL ,
   `time` DATETIME NOT NULL ,
-  PRIMARY KEY (`username`, `task_id`) ,
+  PRIMARY KEY (`username`, `task_id`, `time`) ,
   INDEX `commenter` (`username` ASC) ,
   INDEX `on_task` (`task_id` ASC) ,
   CONSTRAINT `commenter`
