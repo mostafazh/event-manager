@@ -68,7 +68,7 @@ public class UserResource {
 	public String getTeamMembersByTeamID(@QueryParam("team_id") @DefaultValue("") String team_id) {
 		ArrayList<User> r = cm.executeDML("select user.*"+
 										  " from user "+
-										  " where "+User.team_id_column+" = "+team_id);
+										  " where user."+User.team_id_column+" = \'"+team_id+"\'");
 		
 		for (User user : r) {
 			return user.toXML();
