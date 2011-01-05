@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import eg.edu.guc.hci.teamleader.server.model.Team;
 import eg.edu.guc.hci.teamleader.server.model.User;
 import eg.edu.guc.hci.teamleader.ws.TeamResource;
+import eg.edu.guc.hci.teamleader.ws.UserResource;
 
 public class TeamManager {
 	private Team team;
@@ -25,7 +26,7 @@ public class TeamManager {
 	}
 	
 	public ArrayList<User> getTeamMembersByTeamID(int teamID) throws Exception{
-		return new TeamResource().getTeamMembersByTeamID(teamID);
+		return new UserResource().getTeamMembersByTeamID(teamID);
 	}
 	
 	public TeamManager() {}
