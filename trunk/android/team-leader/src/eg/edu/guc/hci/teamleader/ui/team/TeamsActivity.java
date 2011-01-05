@@ -27,16 +27,22 @@ public class TeamsActivity extends ListActivity implements OnItemClickListener {
 		setListAdapter(this.TeamsAdapter);
 		
 		User temp = new User(); temp.setName("ashry");
-		List<User> userList = new TeamManager(temp).getMembers();
-
-		for (User user : userList) {
+		List<User> userList;
+		try {
+			userList = new TeamManager(temp).getMembers();
+			for (User user : userList) {
+				TeamsAdapter.notifyDataSetChanged();
+				TeamsAdapter.add(user);
+			}
 			TeamsAdapter.notifyDataSetChanged();
-			TeamsAdapter.add(user);
-		}
-		TeamsAdapter.notifyDataSetChanged();
 
-		getListView().setOnItemClickListener(this);
-	}
+			getListView().setOnItemClickListener(this);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			}
 
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		startActivity(new Intent(this, TeamMemberView.class).putExtra(
