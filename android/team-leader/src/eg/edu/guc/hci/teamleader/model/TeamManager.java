@@ -24,9 +24,8 @@ public class TeamManager {
 		return new TeamResource().getTeamByMember(member);
 	}
 	
-	public ArrayList<User> getTeamMembersByTeamID(int teamID){
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<User> getTeamMembersByTeamID(int teamID) throws Exception{
+		return new TeamResource().getTeamMembersByTeamID(teamID);
 	}
 	
 	public TeamManager() {}

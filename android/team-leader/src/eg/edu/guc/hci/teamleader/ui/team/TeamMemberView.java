@@ -17,13 +17,20 @@ public class TeamMemberView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.team_member);
 		User temp = new User(); temp.setName("ashry");
-		List<User> list = new TeamManager(temp).getMembers();
-		User tm = list.get(getIntent().getIntExtra("position", 0));
+		List<User> list;
+		try {
+			list = new TeamManager(temp).getMembers();
+			User tm = list.get(getIntent().getIntExtra("position", 0));
+			
+			((TextView) findViewById(R.id.teamMemberName)).setText(tm.getName());
+			((ListView) findViewById(R.id.teamMemberList))
+					.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
+							new String[] { "Name\n" + tm.getName(), "Age\n22",
+									"Position\n" + tm.getType_id(), "Team\nTeam 1" }));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		((TextView) findViewById(R.id.teamMemberName)).setText(tm.getName());
-		((ListView) findViewById(R.id.teamMemberList))
-				.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-						new String[] { "Name\n" + tm.getName(), "Age\n22",
-								"Position\n" + tm.getType_id(), "Team\nTeam 1" }));
 	}
 }
