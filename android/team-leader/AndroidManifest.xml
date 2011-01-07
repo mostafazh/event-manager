@@ -9,7 +9,10 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".TasksActivity" android:label="@string/app_name" />
+		<activity android:name=".user.UsersActivity" android:label="@string/app_name" />
+		<activity android:name=".task.TasksActivity" android:label="@string/app_name" />
+		<activity android:name=".task.TaskView" android:label="@string/app_name" />
+		<activity android:name=".task.CreateTask" android:label="@string/app_name" />
 		<activity android:name=".team.TeamsActivity" android:label="@string/app_name" />
 		<activity android:name=".team.TeamMemberView" android:label="@string/app_name" />
 		<activity android:name=".ReportsActivity" android:label="@string/app_name" />

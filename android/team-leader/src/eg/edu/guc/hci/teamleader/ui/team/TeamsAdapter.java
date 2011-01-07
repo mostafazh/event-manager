@@ -42,7 +42,10 @@ class TeamsAdapter extends ArrayAdapter<User> {
 				member_name.setText(o.getName());
 			}
 			if (member_position != null) {
-				member_position.setText(o.getType_id());
+				if(o.getType_id()==1)
+					member_position.setText("Leader");
+				else
+					member_position.setText("Usher");
 			}
 			ImageView im = (ImageView) v.findViewById(R.id.icon);
 			if (im != null) {

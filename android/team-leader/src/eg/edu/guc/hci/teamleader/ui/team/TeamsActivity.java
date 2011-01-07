@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import eg.edu.guc.hci.teamleader.model.AllUsers;
 import eg.edu.guc.hci.teamleader.model.TeamManager;
 import eg.edu.guc.hci.teamleader.server.model.User;
 import eg.edu.guc.hci.teamleader.ui.R;
@@ -29,7 +30,8 @@ public class TeamsActivity extends ListActivity implements OnItemClickListener {
 		User temp = new User(); temp.setName("ashry");
 		List<User> userList;
 		try {
-			userList = new TeamManager(temp).getMembers();
+			//userList = new TeamManager(temp).getMembers();
+			userList = new AllUsers().getUsers();
 			for (User user : userList) {
 				TeamsAdapter.notifyDataSetChanged();
 				TeamsAdapter.add(user);
