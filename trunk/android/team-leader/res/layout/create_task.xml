@@ -7,7 +7,7 @@
 
 <LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">
  <TextView 	android:gravity="center_horizontal"
-			android:layout_height="wrap_content" android:text="CREATE NEW TASK" android:layout_width="match_parent" android:textSize="30dp" android:textStyle="bold" android:background="#FF404040"  /> 
+			android:layout_height="wrap_content"  android:hint="CREATE NEW TASK" android:layout_width="match_parent" android:textSize="30dp" android:textStyle="bold" android:background="#FF404040"  /> 
 </LinearLayout>
 
 	<LinearLayout
@@ -16,13 +16,8 @@
 	  android:orientation="horizontal"
 	  android:layout_height="wrap_content" android:layout_width="match_parent">
 	  
-	  <TextView android:id="@+id/TextViwe_Task1"
-			 android:layout_weight="0.3"
-			android:layout_width="0dip" 
-			android:layout_height="wrap_content" android:text="Title : "/> 
-	  <EditText android:text="title" android:id="@+id/create_task_title"
-			 android:layout_weight="0.7"
-			android:layout_width="0dip" 
+	  <EditText android:hint="title" android:id="@+id/create_task_title"
+			android:layout_width="match_parent" 
 			android:layout_height="wrap_content"/> 
 	</LinearLayout>
 
@@ -32,12 +27,7 @@
 	  android:orientation="horizontal"
 	  android:layout_height="wrap_content" android:layout_width="match_parent">
 
-
-		<TextView android:text="PRIORTY : "
-				 android:layout_weight="0.3"
-				android:layout_width="0dip" android:layout_height="wrap_content"/> 
-		<EditText android:text="priority" android:layout_weight="0.7" 
-				android:layout_width="0dip" android:layout_height="wrap_content" android:id="@+id/create_task_priorty"/> 
+		<EditText android:hint="priority" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/create_task_priorty"/> 
 	
 	</LinearLayout>
 
@@ -48,35 +38,24 @@
 	  android:orientation="horizontal"
 	  android:layout_height="wrap_content" android:layout_width="match_parent">
   
-	  <TextView android:text="DESCRIPTION : "
-			android:lines="3" android:layout_weight="0.3"
-			android:layout_width="0dip" android:layout_height="wrap_content"/> 
-	
-	  <EditText android:text="description" android:lines="3" android:layout_weight="0.7"
-			android:layout_width="0dip" android:layout_height="wrap_content" android:id="@+id/create_task_description"/> 
+	  <EditText android:hint="description" android:lines="3" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/create_task_description"/> 
 	
 	</LinearLayout>  
   
   
-<LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">
-<TextView android:layout_height="wrap_content" android:layout_weight="0.3"  android:layout_width="0dip" android:text="DEADLINE : "></TextView>
 
-<Button android:layout_weight="0.35" android:layout_width="0dip" android:layout_height="wrap_content" android:text="Date" android:id="@+id/create_task_date"></Button>
-<Button android:layout_weight="0.35" android:layout_width="0dip" android:layout_height="wrap_content" android:text="Time" android:id="@+id/create_task_time"></Button>
+<LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">
+<Button android:id="@+id/DatePicker01"  android:text="Date" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:id="@+id/DatePicker01"  android:text="Time" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 </LinearLayout>
 
 <LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">
-<TextView android:text="Assigned to:"  
-		android:layout_width="fill_parent" android:layout_height="wrap_content"/>
-</LinearLayout>
-
-<LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">
- <Button android:text="Choose from contact"
+ <Button android:text="Assign to contact"
   android:id="@+id/create_task_assignTo"
 		android:layout_height="fill_parent"
 		android:gravity="left"
 		android:layout_width="match_parent"
-		android:onClick="assignTo"/> 
+		android:onClick="assign"/> 
 </LinearLayout>
 
 <LinearLayout  android:layout_height="wrap_content" android:layout_width="match_parent">  

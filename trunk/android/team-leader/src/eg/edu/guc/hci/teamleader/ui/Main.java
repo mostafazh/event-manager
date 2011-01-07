@@ -1,7 +1,9 @@
 package eg.edu.guc.hci.teamleader.ui;
 
 import eg.edu.guc.hci.teamleader.ui.R;
+import eg.edu.guc.hci.teamleader.ui.task.TasksActivity;
 import eg.edu.guc.hci.teamleader.ui.team.TeamsActivity;
+//import eg.edu.guc.hci.usher.tasks.tasksActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -24,26 +26,26 @@ public class Main extends TabActivity {
 		intent = new Intent(this, TasksActivity.class);
 
 		// Initialize a TabSpec for each tab and add it to the TabHost
-		spec = tabHost.newTabSpec("Tasks").setIndicator("Tasks")
+		spec = tabHost.newTabSpec("Tasks").setIndicator("Tasks",res.getDrawable(R.drawable.tasks))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		// Do the same for the other tabs
 		intent = new Intent(this, TeamsActivity.class);
-		spec = tabHost.newTabSpec("Teams").setIndicator("Teams")
+		spec = tabHost.newTabSpec("Teams").setIndicator("Teams",res.getDrawable(R.drawable.ppl))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		intent = new Intent(this, ReportsActivity.class);
-		spec = tabHost.newTabSpec("Reports").setIndicator("Reports")
+		spec = tabHost.newTabSpec("Reports").setIndicator("Reports",res.getDrawable(R.drawable.rep))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		intent = new Intent(this, InboxActivity.class);
-		spec = tabHost.newTabSpec("Inbox").setIndicator("Inbox")
+		spec = tabHost.newTabSpec("Inbox").setIndicator("Inobox",res.getDrawable(R.drawable.msg))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		tabHost.setCurrentTab(2);
+		tabHost.setCurrentTab(0);
 	}
 }
