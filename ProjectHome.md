@@ -1,0 +1,1 @@
+an Event Manager on Android for now.
